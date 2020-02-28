@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="65f67d01-1107-4874-8dc5-474cc6d2ec8b" name="Default Changelist" comment="Contains base library methods, few sanity test cases&#10;Reviewers :  &lt;&gt;&#10;Ticket    :  &lt;&gt;">
-      <change afterPath="$PROJECT_DIR$/test_scripts/functional/test_cases.py" afterDir="false" />
+    <list default="true" id="65f67d01-1107-4874-8dc5-474cc6d2ec8b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -87,13 +86,21 @@
       <option name="project" value="LOCAL" />
       <updated>1582636504079</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="documentation">
+      <created>1582882502874</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1582882502950</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Initial structure" />
     <MESSAGE value="Contains base library methods, few sanity test cases&#10;Reviewers :  &lt;&gt;&#10;Ticket    :  &lt;&gt;" />
-    <option name="LAST_COMMIT_MESSAGE" value="Contains base library methods, few sanity test cases&#10;Reviewers :  &lt;&gt;&#10;Ticket    :  &lt;&gt;" />
+    <MESSAGE value="documentation" />
+    <option name="LAST_COMMIT_MESSAGE" value="documentation" />
   </component>
   <component name="WindowStateProjectService">
     <state x="453" y="212" key="#com.intellij.tools.ToolEditorDialog" timestamp="1582636691327">
@@ -124,9 +131,9 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="186" y="9" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1582638132264" />
-    <state x="275" y="99" key="Vcs.Push.Dialog.v2" timestamp="1582882430381">
+    <state x="275" y="99" key="Vcs.Push.Dialog.v2" timestamp="1582882613397">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="275" y="99" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1582882430381" />
+    <state x="275" y="99" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1582882613397" />
   </component>
 </project>

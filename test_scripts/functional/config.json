@@ -1,0 +1,185 @@
+{
+    "global_config": {
+        "base_url" : "https://showoff-rails-react-production.herokuapp.com/api/v1/users/",
+        "client_id": "277ef29692f9a70d511415dc60592daf4cf2c6f6552d3e1b769924b2f2e2e6fe",
+        "client_secret": "d6106f26e8ff5b749a606a1fba557f44eb3dca8f48596847770beb9b643ea352",
+        "email_id_suffix": "@showoff.ie",
+        "request_dict": {
+            "headers": {
+                "Content-Type": "application/json"
+            }
+        },
+        "response_time": 2
+    },
+    "test_args": {
+        "TestCases": {
+            "test_create_user_endpoint": {
+                "user_details": {
+                    "first_name": "FirstName",
+                    "last_name": "LastName",
+                    "password": "Password",
+                    "image_url": "https://static.thenounproject.com/png/961-200.png"
+                },
+                "expected_result": "Success"
+            },
+            "test_create_user_endpoint_duplicate_user": {
+                "user_details": {
+                    "first_name": "FirstName",
+                    "last_name": "LastName",
+                    "password": "Password",
+                    "image_url": "https://static.thenounproject.com/png/961-200.png"
+                },
+                "expected_result": "A user with that email already exists"
+            },
+            "test_create_user_missing_mandatory_field_values": {
+                "user_details": {
+                    "first_name": "FirstName",
+                    "last_name": "LastName",
+                    "password": "Password",
+                    "image_url": "https://static.thenounproject.com/png/961-200.png"
+                },
+                "expected_result": {
+                    "missing_first_name": "First name can't be blank",
+                    "missing_last_name": "Last name can't be blank",
+                    "missing_password": "Password can't be blank",
+                    "missing_email": "Email can't be blank"
+                }
+            },
+            "test_update_user_endpoint": {
+                "relative_url": "me",
+                "user_details": {
+                    "first_name": "FirstName",
+                    "last_name": "LastName",
+                    "password": "password",
+                    "image_url": "https://static.thenounproject.com/png/961-200.png"
+                },
+                "updated_user_details": {
+                    "first_name": "UpdateFirstName",
+                    "last_name": "UpdatedLastName",
+                    "dob": 1464083530,
+                    "image_url": "https://static.thenounproject.com/png/961-200.png"
+                },
+                "expected_result": "success"
+            },
+            "test_update_user_endpoint_new_email": {
+                "relative_url": "me",
+                "relative_url_check_email": "email?email={0}&client_id={1}&client_secret={2}",
+                "user_details": {
+                    "first_name": "FirstName",
+                    "last_name": "LastName",
+                    "password": "password",
+                    "image_url": "https://static.thenounproject.com/png/961-200.png"
+                },
+                "updated_user_details": {
+                    "first_name": "UpdateFirstName",
+                    "last_name": "UpdatedLastName",
+                    "dob": 1464083530,
+                    "image_url": "https://static.thenounproject.com/png/961-200.png"
+                },
+                "expected_result": "Success"
+            },
+            "test_update_user_endpoint_existing_email": {
+                "relative_url": "me",
+                "relative_url_check_email": "email?email={0}&client_id={1}&client_secret={2}",
+                "user_details": {
+                    "first_name": "FirstName",
+                    "last_name": "LastName",
+                    "password": "password",
+                    "image_url": "https://static.thenounproject.com/png/961-200.png"
+                },
+                "updated_user_details": {
+                    "first_name": "UpdateFirstName",
+                    "last_name": "UpdatedLastName",
+                    "dob": 1464083530,
+                    "image_url": "https://static.thenounproject.com/png/961-200.png"
+                },
+                "expected_result": "Email has already been taken"
+            },
+            "test_check_email_endpoint": {
+                "relative_url": "email?email={0}&client_id={1}&client_secret={2}",
+                "expected_result": true
+            },
+            "test_check_email_endpoint_existing_email": {
+                "relative_url": "email?email={0}&client_id={1}&client_secret={2}",
+                "user_details": {
+                    "first_name": "FirstName",
+                    "last_name": "LastName",
+                    "password": "Password",
+                    "image_url": "https://static.thenounproject.com/png/961-200.png"
+                },
+                "email_id": "prasadhegde@showoff.ie",
+                "verify_response_header": {"Server": "Cowboy", "X-Frame-Options": "SAMEORIGIN",
+                                           "X-Xss-Protection": "1; mode=block",
+                                           "X-Content-Type-Options": "nosniff",
+                                           "Content-Type": "application/json; charset=utf-8",
+                                           "Vary": "Accept-Encoding, Origin",
+                                           "Cache-Control": "max-age=0, private, must-revalidate",
+                                           "Transfer-Encoding": "chunked", "Via": "1.1 vegur",
+                                           "Connection": "Keep-Alive", "Content-Encoding": "gzip"},
+                "expected_result": {
+                    "code": 0,
+                    "message": "Success",
+                    "data": {
+                        "available": false
+                    }
+                }
+            },
+            "test_check_email_endpoint_incorrect_client_id_and_client_secret": {
+                "relative_url": "email?email={0}&client_id={1}&client_secret={2}",
+                "client_id": "123456789",
+                "client_secret": "019283746",
+                "expected_result": {
+                    "code": 10, "message": "This client is not authorized to perform that action.",
+                    "data": null}
+            },
+            "test_check_email_endpoint_with_blank_values": {
+                "relative_url": "email?email={0}&client_id={1}&client_secret={2}",
+                "expected_result": "This client is not authorized to perform that action."
+            },
+            "test_reset_password_endpoint": {
+                "relative_url": "reset_password",
+                "expected_result": "Password reset email sent to {0}. Please check your email address for further instructions.",
+                "user_details": {
+                    "first_name": "FirstName",
+                    "last_name": "LastName",
+                    "password": "Password",
+                    "image_url": "https://static.thenounproject.com/png/961-200.png"
+                }
+            },
+            "test_reset_password_endpoint_invalid_email": {
+                "invalid_email": "qwerty@ie.ie",
+                "relative_url": "reset_password",
+                "expected_result": "{0} is an invalid email address",
+                "user_details": {
+                    "first_name": "FirstName",
+                    "last_name": "LastName",
+                    "password": "Password",
+                    "image_url": "https://static.thenounproject.com/png/961-200.png"
+                }
+            },
+            "test_change_password_endpoint": {
+                "relative_url": "me/password",
+                "user_details": {
+                    "first_name": "FirstName",
+                    "last_name": "LastName",
+                    "password": "Password",
+                    "new_password": "NewPassword",
+                    "image_url": "https://static.thenounproject.com/png/961-200.png"
+                },
+                "expected_result": "Success"
+            },
+            "test_change_password_invalid_current_password": {
+                "relative_url": "me/password",
+                "user_details": {
+                    "first_name": "FirstName",
+                    "last_name": "LastName",
+                    "password": "Password",
+                    "new_password": "NewPassword",
+                    "image_url": "https://static.thenounproject.com/png/961-200.png"
+                },
+                "invalid_current_password" : "123",
+                "expected_result": "Password is invalid"
+            }
+      }
+    }
+}
